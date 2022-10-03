@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,11 @@ public class ExampleTests {
   @Test
   public void firstTest() {
     WebDriverManager.chromedriver().setup();
-    WebDriver driver = new ChromeDriver();
+    // make it headless for CI
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless");
+    WebDriver driver = new ChromeDriver(options);
+
     driver.get("http://the-internet.herokuapp.com/");
     driver.manage().window().maximize();
     WebElement button = driver.findElement(By.xpath("//ul/li/a"));
