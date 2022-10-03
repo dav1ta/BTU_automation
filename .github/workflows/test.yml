@@ -16,8 +16,6 @@ jobs:
           distribution: 'adopt'
       - name: Install Maven Depedencies
         run: mvn install
-      - name : Install Chromium
-        run: apt install chromium
       - name: Run Tests
         run: mvn clean test -Dtest=*
 
