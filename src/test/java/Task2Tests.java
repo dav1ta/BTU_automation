@@ -21,7 +21,7 @@ public class Task2Tests {
   public Task2Tests() {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
-    // options.addArguments("--headless");
+    options.addArguments("--headless");
     driver = new ChromeDriver(options);
   }
 
