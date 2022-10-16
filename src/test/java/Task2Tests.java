@@ -22,6 +22,7 @@ public class Task2Tests {
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless");
+    options.addArguments("--disable-dev-shm-usage");
     driver = new ChromeDriver(options);
   }
 
