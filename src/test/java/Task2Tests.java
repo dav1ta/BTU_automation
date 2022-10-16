@@ -62,8 +62,6 @@ public class Task2Tests {
     purple.click();
     WebElement orange = driver.findElement(By.xpath("//*[@id='fruit-selects']/option[2]"));
     Assert.assertTrue(!orange.isEnabled());
-
-
-    // driver.close();
+    driver.close();
   }
 }
