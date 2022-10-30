@@ -17,7 +17,7 @@ public class Api {
   }
 
   @Test
-  public void getBooks() {
+  public void ValidateLastBookIsbn() {
     given()
         .when()
         .get("https://bookstore.toolsqa.com/BookStore/v1/Books")
@@ -28,13 +28,13 @@ public class Api {
   }
 
   @Test
-  public void validateResult() {
+  public void validateFirstTwoBookPages() {
     given()
         .when()
         .get("https://bookstore.toolsqa.com/BookStore/v1/Books")
         .then().log().all()
         .assertThat()
-        .body("books[0,1].pages", hasItems(234, 254));
+        .body("books[0,1].isbn", hasItems(234, 254));
   }
 
 }
