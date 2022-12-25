@@ -7,7 +7,7 @@ pipeline {
           steps {
             timestamps() {
               fileExists 'pom.xml'
-              sh '/var/jenkins_home/mvn clean install -Dlicense.skip=true'
+              sh '/var/jenkins_home/maven/bin/mvn clean install -Dlicense.skip=true'
             }
 
           }
@@ -16,7 +16,7 @@ pipeline {
         stage('Get version') {
           steps {
             timestamps() {
-              sh '/var/jenkins_home/mvn --version'
+              sh '/var/jenkins_home/maven/bin/mvn --version'
             }
 
           }
