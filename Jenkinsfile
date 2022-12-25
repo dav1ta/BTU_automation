@@ -7,7 +7,7 @@ pipeline {
           steps {
             timestamps() {
               fileExists 'pom.xml'
-              bat 'mvn clean install -Dlicense.skip=true'
+              sh 'mvn clean install -Dlicense.skip=true'
             }
 
           }
